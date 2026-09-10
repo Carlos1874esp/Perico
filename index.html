@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Perico — Publicación automatizada de vídeo</title>
+<meta name="description" content="Perico es una herramienta privada que publica vídeos en los canales de YouTube de su propietario a través de la YouTube Data API.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrap">
+
+  <header class="site">
+    <span class="kicker">Herramienta de publicación</span>
+    <h1>Perico</h1>
+    <p class="lede">Una herramienta privada que publica vídeos ya producidos en los canales de YouTube de su propietario, usando la YouTube Data API v3.</p>
+  </header>
+
+  <section>
+    <h2>Qué hace</h2>
+    <p>Perico automatiza el último paso de un flujo de producción de vídeo: la publicación. Toma un archivo de vídeo ya terminado junto con sus metadatos —título, descripción, etiquetas, miniatura y fecha de publicación— y lo sube al canal de YouTube correspondiente.</p>
+    <p>No genera audiencia, no interactúa con otros usuarios de YouTube y no accede a canales que no pertenezcan a su propietario.</p>
+  </section>
+
+  <section>
+    <h2>Cómo funciona</h2>
+    <ol class="steps">
+      <li>El propietario autoriza cada uno de sus canales una sola vez mediante el flujo estándar de OAuth&nbsp;2.0 de Google, concediendo únicamente los permisos de subida y gestión de sus propios vídeos.</li>
+      <li>Al terminar la producción de un vídeo, se genera un archivo de metadatos junto al vídeo, con el título, la descripción, las etiquetas y la fecha de publicación prevista.</li>
+      <li>Perico sube el vídeo mediante <code>videos.insert</code>, aplica la miniatura y lo añade a la lista de reproducción indicada. La publicación queda programada en la fecha señalada.</li>
+    </ol>
+  </section>
+
+  <section>
+    <h2>Alcance de los permisos</h2>
+    <div class="box">
+      <p>Perico solicita únicamente dos permisos de la YouTube Data API:</p>
+      <ul>
+        <li><strong>youtube.upload</strong> — subir vídeos al canal autorizado.</li>
+        <li><strong>youtube</strong> — aplicar la miniatura, añadir el vídeo a una lista de reproducción y actualizar sus metadatos.</li>
+      </ul>
+      <p>No se solicitan permisos de lectura de analíticas, de gestión de comentarios ni de socio de contenidos.</p>
+    </div>
+    <p>El propietario puede revocar el acceso en cualquier momento desde <a href="https://myaccount.google.com/permissions" rel="noopener">la página de permisos de su cuenta de Google</a>.</p>
+  </section>
+
+  <section>
+    <h2>Uso y disponibilidad</h2>
+    <p>Perico es una herramienta de uso interno. No se ofrece como servicio a terceros, no admite registro de usuarios y no procesa datos de personas distintas de su propietario.</p>
+  </section>
+
+  <section>
+    <h2>Contacto</h2>
+    <p>Para cualquier cuestión sobre esta herramienta, incluida la privacidad y el tratamiento de datos: <a href="mailto:carloszeneta@gmail.com">carloszeneta@gmail.com</a></p>
+  </section>
+
+  <footer>
+    <p><a href="privacidad.html">Política de privacidad</a> · <a href="terminos.html">Términos de servicio</a></p>
+    <p>Perico · Carlos Martínez · España</p>
+  </footer>
+
+</div>
+</body>
+</html>
